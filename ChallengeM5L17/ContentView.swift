@@ -9,7 +9,7 @@
     
     struct ContentView: View {
         
-        @EnvironmentObject var module:ContentModule
+        @EnvironmentObject var lesson:ContentModule
         @State var search = ""
         
         var body: some View {
@@ -21,17 +21,23 @@
                         .bold()
                         .font(.largeTitle)
                         .padding()
-                    
                 }
                 
-                //SearchView 
+                //SearchView
                 SearchView(text: $search)
                     .padding(.bottom,20)
                     .padding(.horizontal)
                 
-                List(module.modules.filter({search.isEmpty ? true : $0.title!.contains(search)})){ module in
+                List(lesson.modules.filter({search.isEmpty ? true : $0.title!.contains(search)})){ module in
                     
-                    Text(module.title!)
+                    NavigationLink(
+                        destination: MediaView()
+                            .onAppear(perform: {
+                                lesson.getLessonById(module.id!)
+                            }),
+                        label: {
+                            Text(module.title!)
+                        })
                 }
                 
             }

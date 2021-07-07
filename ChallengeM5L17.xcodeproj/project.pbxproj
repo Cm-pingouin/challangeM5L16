@@ -14,6 +14,7 @@
 		0D8DB70C2695E76900BD041A /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DB70B2695E76900BD041A /* Module.swift */; };
 		0D8DB70E2695E78F00BD041A /* ContentModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DB70D2695E78F00BD041A /* ContentModule.swift */; };
 		0D8DB7102695F7E000BD041A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DB70F2695F7E000BD041A /* SearchView.swift */; };
+		0D8DB71226960B2200BD041A /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8DB71126960B2200BD041A /* MediaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0D8DB70B2695E76900BD041A /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		0D8DB70D2695E78F00BD041A /* ContentModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModule.swift; sourceTree = "<group>"; };
 		0D8DB70F2695F7E000BD041A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		0D8DB71126960B2200BD041A /* MediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				0D8DB6FC2695E73700BD041A /* ChallengeM5L17App.swift */,
 				0D8DB6FE2695E73700BD041A /* ContentView.swift */,
+				0D8DB71126960B2200BD041A /* MediaView.swift */,
 				0D8DB70F2695F7E000BD041A /* SearchView.swift */,
 				0D8DB70B2695E76900BD041A /* Module.swift */,
 				0D8DB70D2695E78F00BD041A /* ContentModule.swift */,
@@ -152,6 +155,7 @@
 				0D8DB6FD2695E73700BD041A /* ChallengeM5L17App.swift in Sources */,
 				0D8DB70C2695E76900BD041A /* Module.swift in Sources */,
 				0D8DB70E2695E78F00BD041A /* ContentModule.swift in Sources */,
+				0D8DB71226960B2200BD041A /* MediaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

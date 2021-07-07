@@ -10,6 +10,7 @@ import Foundation
 class ContentModule : ObservableObject{
     
     @Published var modules = [Module]()
+    @Published var videoLesson:Module?
     
     init() {
         getRemoteData()
@@ -43,5 +44,16 @@ class ContentModule : ObservableObject{
             }
         }.resume()
 
+    }
+    
+    //return a lesson
+    
+    func getLessonById(_ IdLesson:Int){
+        
+        for index in 0..<modules.count{
+            if index == IdLesson{
+                self.videoLesson = modules[index]
+            }
+        }
     }
 }
