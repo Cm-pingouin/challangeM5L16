@@ -12,6 +12,7 @@ struct ChallengeM5L17App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ContentModule())
         }
     }
 }
