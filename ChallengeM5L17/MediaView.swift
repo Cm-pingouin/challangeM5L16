@@ -9,16 +9,29 @@ import SwiftUI
 import AVKit
 
 struct MediaView: View {
-    
-    //Declaraction variable
     @EnvironmentObject var module:ContentModule
     
+    var lesson:Module!
     
     var body: some View {
         
-        let url = module.videoLesson?.url
-        
-        VideoPlayer(player: AVPlayer(url: URL(string: url!)!))
-        
+        VStack(alignment: .leading){
+            if lesson.id != nil{
+                Text(lesson.title!)
+                
+                VideoPlayer(player: AVPlayer(url: URL(string: lesson.url!)!))
+                    .cornerRadius(10)
+            }else{
+                Text("Video indisponible!! Ressayer plus tard")
+            }
+        }.navigationBarTitle("Video Player")
+        .padding()
+    }
+}
+
+struct MediaView_Previews: PreviewProvider {
+    static var previews: some View {
+        MediaView(lesson: Module())
+            .environmentObject(ContentModule())
     }
 }

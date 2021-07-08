@@ -14,32 +14,24 @@
         
         var body: some View {
             
-            VStack(alignment: .leading){
-                //Title
-                HStack{
-                    Text("All Video")
-                        .bold()
-                        .font(.largeTitle)
-                        .padding()
-                }
-                
-                //SearchView
-                SearchView(text: $search)
-                    .padding(.bottom,20)
-                    .padding(.horizontal)
-                
-                List(lesson.modules.filter({search.isEmpty ? true : $0.title!.contains(search)})){ module in
+            NavigationView{
+                VStack(alignment: .leading){
                     
-                    NavigationLink(
-                        destination: MediaView()
-                            .onAppear(perform: {
-                                lesson.getLessonById(module.id!)
-                            }),
-                        label: {
-                            Text(module.title!)
-                        })
-                }
-                
+                    //SearchView
+                    SearchView(text: $search)
+                        .padding(.bottom,20)
+                        .padding(.horizontal)
+                    
+                    List(lesson.modules.filter({search.isEmpty ? true : $0.title!.contains(search)})){ module in
+                        
+                        NavigationLink(
+                            destination: MediaView(lesson: module),
+                            label: {
+                                Text(module.title!)
+                            })
+                    }
+                    
+                }.navigationBarTitle("All Videos")
             }
         }
     }

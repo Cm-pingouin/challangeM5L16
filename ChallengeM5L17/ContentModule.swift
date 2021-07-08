@@ -10,7 +10,7 @@ import Foundation
 class ContentModule : ObservableObject{
     
     @Published var modules = [Module]()
-    @Published var videoLesson:Module?
+    @Published var currentModule:Module?
     
     init() {
         getRemoteData()
@@ -46,14 +46,19 @@ class ContentModule : ObservableObject{
 
     }
     
-    //return a lesson
-    
-    func getLessonById(_ IdLesson:Int){
+    //get module by id
+    func getModuleById(_ id:Int){
         
         for index in 0..<modules.count{
-            if index == IdLesson{
-                self.videoLesson = modules[index]
+            if modules[index].id == id{
+                DispatchQueue.main.async {
+                    self.currentModule = self.modules[id]
+                }
+                break
             }
         }
+        
+        self.currentModule = nil
     }
+    
 }
